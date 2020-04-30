@@ -1,0 +1,80 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Font Table Test</title>
+  <script src="index.js"></script>
+  <style>
+    table {
+      table-layout: fixed;
+      border: 1px solid #AAA;
+      border-collapse: collapse;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #EEE;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #FFF;
+    }
+
+    th, td {
+      padding: 5px;
+      border: thin solid;
+    }
+    pre {
+      white-space: normal;
+      max-height: 200px;
+      border: 1px solid black;
+      overflow-y: scroll;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+<h1>Font Tables!</h1>
+
+<label for="runs-count">Number of runs:</label>
+<select name="runs-count" id="runs-count">
+  <option value="1" selected>1</option>
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="100">100</option>
+</select>
+<button onclick="runTests()">Run Test</button>
+<button onclick="clearAll()">Clear</button>
+<content id="status"></content>
+
+<table id="runs">
+<thead>
+<tr>
+  <th>Num Runs</th>
+  <th>Total Elapsed</th>
+  <th>Font Data Elapsed</th>
+  <th>Total Data Read</th>
+  <th>μ Throughput</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table id="fonts" style="display: none;">
+<thead>
+<tr>
+  <th>Postscript Name</th>
+  <th>Full Name</th>
+  <th>Family</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<h2>Results</h2>
+<content id="save-area"></content>
+<pre id="metrics-data"></pre>
+
+</body>
+</html>
